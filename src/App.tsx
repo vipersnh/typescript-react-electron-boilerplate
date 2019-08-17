@@ -4,6 +4,8 @@ import {observer} from 'mobx-react'
 import {observable, action, configure, computed} from 'mobx'
 import {withStyles, WithStyles} from '@material-ui/core/styles'
 import { createStyles, Theme } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import  * as path from 'path'
 
 configure({enforceActions: "observed"})
 
@@ -27,10 +29,19 @@ const App = withStyles(AppStyles)(observer(
         }
 
         bindAllFunctions() {
+            this.buttonClicked = this.buttonClicked.bind(this)
+        }
+
+        buttonClicked () {
         }
 
         render() {
-            return ( <p> Hello World </p> )
+            return ( 
+                <div>
+                    <p> Hello World </p> 
+                    <Button color="primary" variant="contained" onClick={this.buttonClicked}> Click ME </Button>
+                </div>
+            )
         }
     }
 ))

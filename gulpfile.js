@@ -1,6 +1,5 @@
 const spawn = require('child_process').spawn;
 const gulp = require('gulp');
-const babel = require('gulp-babel');
 const css = require('gulp-css');
 const ts = require('gulp-typescript');
 const tsProject = ts.createProject('tsconfig.json');
